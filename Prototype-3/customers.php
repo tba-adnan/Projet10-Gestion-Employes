@@ -7,7 +7,7 @@
         private $password   = "superuser@123";
         private $database   = "dbx";
         public  $con;
-        //
+
         public function __construct()
         {
             $this->con = new mysqli($this->servername, $this->username,$this->password,$this->database);
@@ -18,7 +18,6 @@
             }
         }
 
-        // inserting data
         public function insertData($post)
         {
             $name = $this->con->real_escape_string($_POST['name']);
@@ -33,7 +32,6 @@
             }
         }
 
-        // listing/streaming from database
         public function displayData()
         {
             $query = "SELECT * FROM customers";
@@ -49,7 +47,7 @@
             }
         }
 
-        // stream edit function
+        
         public function displyaRecordById($id)
         {
             $query = "SELECT * FROM customers WHERE id = '$id'";
@@ -62,7 +60,7 @@
             }
         }
 
-        // Update/Edit
+
         public function updateRecord($postData)
         {
             $name = $this->con->real_escape_string($_POST['uname']);
@@ -81,7 +79,7 @@
             
         }
 
-        // Delete entries
+        // Delete customer data from customer table
         public function deleteRecord($id)
         {
             $query = "DELETE FROM customers WHERE id = '$id'";

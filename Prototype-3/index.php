@@ -1,28 +1,21 @@
 <?php
   include 'customers.php';
   $customerObj = new Employee();
-  // delete
+  // Delete
   if(isset($_GET['deleteId']) && !empty($_GET['deleteId'])) {
-      $deleteId = $_GET['deleteId']; // Delete.
+      $deleteId = $_GET['deleteId'];
       $customerObj->deleteRecord($deleteId);
-  }
-//
+  }   
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Gestion Employee.</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<div class="card text-center" style="padding:15px;">
-</div><br><br> 
-
-<div class="container">
   <h2>
-    <a href="add.php"><button class="btn btn-success"><i ></i>add</button></a>
+    <a href="add.php"><button>add<i class="fas fa-plus"></i></button></a>
   </h2>
   <table class="table table-hover">
     <thead>
@@ -45,10 +38,10 @@
           <td><?php echo $customer['email'] ?></td>
           <td><?php echo $customer['salary'] ?></td>
           <td>
-            <button type="submit">Edit<a href="/edit.php?editId=<?php echo $customer['id'] ?>">
-              <i aria-hidden="true"></i></a></button>
+            <button>Edit<a href="edit.php?editId=<?php echo $customer['id'] ?>">
+              <i class="fa fa-pencil text-white" aria-hidden="true"></i></a></button>
             <button>Delete<a href="index.php?deleteId=<?php echo $customer['id'] ?>" onclick="confirm('Are you sure want to delete this record')">
-              <i aria-hidden="true"></i>
+              <i class="fa fa-trash text-white" aria-hidden="true"></i>
             </a></button>
           </td>
         </tr>
@@ -57,5 +50,4 @@
   </table>
 </div>
 </body>
-<!-- -->
 </html>

@@ -1,13 +1,17 @@
 <?php
-
+  
+  // Include database file
   include 'customers.php';
+
   $customerObj = new Employee();
 
+  // Edit customer record
   if(isset($_GET['editId']) && !empty($_GET['editId'])) {
     $editId = $_GET['editId'];
     $customer = $customerObj->displyaRecordById($editId);
   }
 
+  // Update Record in customer table
   if(isset($_POST['update'])) {
     $customerObj->updateRecord($_POST);
   }  
@@ -16,7 +20,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -30,7 +33,7 @@
         <div class="col-md-5 mx-auto">
             <div class="card">
                 <div class="card-header bg-primary">
-                    <h4 class="text-white">Update Records</h4>
+                    <h4 class="text-white">Update Records : </h4>
                 </div>
                 <div class="card-body bg-light">
                   <form action="edit.php" method="POST">

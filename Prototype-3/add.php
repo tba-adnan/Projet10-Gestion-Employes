@@ -4,8 +4,8 @@
   if(isset($_POST['submit'])) {
     $customerObj->insertData($_POST);
   }
+
 ?>
-<!--  -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +15,10 @@
 </head>
 
 <body>
-  <h1> add : </h1>
+
+
+  <div class="card-header bg-dark text-white">
+    <h4>Insert Data</h4>
   </div>
   <div class="card-body bg-light">
     <form action="add.php" method="POST">
@@ -32,7 +35,8 @@
         <input type="text" class="form-control" name="salary" placeholder="Enter Salary" required="">
       </div>
       <input type="submit" name="submit" class="btn btn-primary" value="Submit">
-    </form>
+  </div>
+
 </body>
 
 </html>
