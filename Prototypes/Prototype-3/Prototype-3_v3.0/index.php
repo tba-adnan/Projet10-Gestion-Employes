@@ -1,6 +1,6 @@
 <?php
     include "GestionEmployes.php";
-    // Trouver tous les employés depuis la base de données 
+//
     $gestionEmployes = new GestionEmployes();
     $employes = $gestionEmployes->RechercherTous();
 ?>

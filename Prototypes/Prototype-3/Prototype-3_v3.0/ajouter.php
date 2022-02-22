@@ -1,7 +1,6 @@
 <?php
 
-include "GestionEmployes.php";
-// Trouver tous les employés depuis la base de données 
+include "GestionEmployes.php"; 
 $gestionEmployes = new GestionEmployes();
 $employes = $gestionEmployes->RechercherTous();
 
@@ -11,8 +10,6 @@ if(!empty($_POST)){
 	$employe->setPrenom($_POST['Prenom']);
 	$employe->setDateNaissance($_POST['DateNaissance']);
 	$gestionEmployes->Ajouter($employe);
-	
-	// Redirection vers la page index.php
 	header("Location: index.php");
 }
 ?>
